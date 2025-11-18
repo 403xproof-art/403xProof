@@ -1,0 +1,37 @@
+{
+  "name": "@403xauth/server-express",
+  "version": "1.0.0",
+  "description": "Express middleware for 403xAuth - stateless Web3 authentication",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "solana",
+    "web3",
+    "authentication",
+    "403xauth"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^1.87.6",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "express": "^4.18.0"
+  }
+}
+
