@@ -1,0 +1,37 @@
+{
+  "name": "@403xauth/server-fastify",
+  "version": "1.0.0",
+  "description": "Fastify plugin for 403xAuth - stateless Web3 authentication",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "fastify",
+    "plugin",
+    "solana",
+    "web3",
+    "authentication",
+    "403xauth"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^1.87.6",
+    "tweetnacl": "^1.0.3",
+    "fastify-plugin": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "fastify": "^4.24.0"
+  }
+}
+
