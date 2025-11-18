@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403xAuth - Browser Usage Example</title>
+</head>
+<body>
+    <h1>403xAuth - Browser Client Example</h1>
+    
+    <button id="connectBtn">Connect Wallet</button>
+    <button id="fetchBtn" disabled>Make Request</button>
+    
+    <div id="result"></div>
+
+    <script type="module">
+        import { AuthClient } from '@403xauth/client';
+
+        const connectBtn = document.getElementById('connectBtn');
+        const fetchBtn = document.getElementById('fetchBtn');
+        const result = document.getElementById('result');
+
+        let client = null;
+
+        connectBtn.addEventListener('click', async () => {
+            try {
+                // Check for Solana wallet
+                if (!window.solana || !window.solana.isPhantom) {
+                    result.textContent = 'Please install Phantom wallet';
+                    return;
+                }
+
+                // Create client with wallet
+                client = new AuthClient({
+                    wallet: window.solana,
+                    baseURL: 'http://localhost:3000',
+                });
+
+                // Connect wallet
+                await client.connect();
+                
+                const publicKey = client.getPublicKey();
+                result.textContent = `Connected: ${publicKey?.toBase58()}`;
+                fetchBtn.disabled = false;
+            } catch (error) {
+                result.textContent = `Error: ${error.message}`;
+            }
+        });
+
+        fetchBtn.addEventListener('click', async () => {
+            try {
+                const response = await client.get('/api/profile');
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                result.textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
+
