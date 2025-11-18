@@ -1,0 +1,26 @@
+{
+  "name": "403xproof",
+  "version": "1.0.0",
+  "description": "Cryptographic proof generation and verification library for Solana",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest"
+  },
+  "keywords": [
+    "solana",
+    "web3",
+    "cryptographic-proof",
+    "verification",
+    "signature",
+    "403xproof"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/403xauth/proof.git"
+  }
+}
+
