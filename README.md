@@ -34,7 +34,7 @@ if (isValid) {
 
 ## 📚 Documentation
 
-Full documentation is available on the [project website](https://403xauth.xyz/docs/proof).
+Full documentation is available on the [project website](https://403xproof.xyz/docs).
 
 ## 🔐 How It Works
 
